@@ -1,0 +1,17 @@
+pluginManagement {
+    repositories {
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    //noinspection GroovyAssignabilityCheck
+    plugins {
+        id 'io.quarkus' version "${quarkusPluginVersion}"
+    }
+}
+
+rootProject.name = 'quarkus-utf8-too-large-exception'
+
+include ':demo-module'
+

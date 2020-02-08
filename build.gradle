@@ -1,0 +1,73 @@
+buildscript {
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        //com.apollographql.apollo:apollo-gradle-plugin
+        classpath("com.apollographql.apollo:apollo-gradle-plugin:1.3.0")
+    }
+
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'com.demo'
+version = '1.0'
+
+
+subprojects {
+
+    apply plugin: 'java'
+
+    compileJava {
+        options.compilerArgs << '-parameters'
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    test {
+        dependsOn 'cleanTest'
+        dependsOn 'quarkusTestConfig'
+        useJUnitPlatform()
+        forkEvery 1
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation "io.quarkus:quarkus-resteasy"
+
+
+        /**
+         * Excluding one of the two dependencies below solves the issue
+         */
+
+        // Excluding this dependency will make it working
+        compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.714'
+
+        // Excluding this dependency will make it working
+        implementation 'io.quarkus:quarkus-hibernate-orm-panache'
+
+        testImplementation 'io.quarkus:quarkus-junit5'
+        testImplementation 'io.rest-assured:rest-assured'
+
+        implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}

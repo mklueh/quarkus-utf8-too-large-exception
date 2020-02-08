@@ -1,0 +1,311 @@
+Testing started at 20:07 ...
+> Task :demo-module:cleanTest
+> Task :demo-module:compileJava UP-TO-DATE
+> Task :demo-module:processResources UP-TO-DATE
+> Task :demo-module:classes UP-TO-DATE
+> Task :demo-module:quarkusTestConfig
+> Task :demo-module:compileTestJava UP-TO-DATE
+> Task :demo-module:processTestResources UP-TO-DATE
+> Task :demo-module:testClasses UP-TO-DATE
+> Task :demo-module:test
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (file:/C:/Users/MyPC/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy/2.5.8/2f1e8ea55e625fe51e85ef35eb067f1d9c61772d/groovy-2.5.8.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Feb. 08, 2020 8:07:40 NACHM. org.jboss.threads.Version <clinit>
+INFO: JBoss Threads version 3.0.0.Final
+Feb. 08, 2020 8:07:40 NACHM. io.quarkus.agroal.deployment.AgroalProcessor build
+WARN: Agroal dependency is present but no driver has been defined for the default datasource
+Feb. 08, 2020 8:07:41 NACHM. org.hibernate.jpa.boot.internal.PersistenceXmlParser doResolve
+INFO: HHH000318: Could not find any META-INF/persistence.xml file in the classpath
+Feb. 08, 2020 8:07:41 NACHM. org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {5.4.10.Final}
+
+TestInstanceFactory [io.quarkus.test.junit.QuarkusTestExtension] failed to instantiate test class [com.quarkus.demo.MediaControllerTest]: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.deployment.steps.MainClassBuildStep#build threw an exception: java.lang.RuntimeException: java.lang.IllegalArgumentException: UTF8 string too large
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1121)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeInteriorOperations(BytecodeCreatorImpl.java:1036)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeOperations(BytecodeCreatorImpl.java:1030)
+	at io.quarkus.gizmo.MethodCreatorImpl.write(MethodCreatorImpl.java:103)
+	at io.quarkus.gizmo.ClassCreator.writeTo(ClassCreator.java:180)
+	at io.quarkus.gizmo.ClassCreator.close(ClassCreator.java:203)
+	at io.quarkus.deployment.recording.BytecodeRecorderImpl.writeBytecode(BytecodeRecorderImpl.java:462)
+	at io.quarkus.deployment.steps.MainClassBuildStep.build(MainClassBuildStep.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:915)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:279)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2011)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1535)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1426)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
+Caused by: java.lang.IllegalArgumentException: UTF8 string too large
+	at org.objectweb.asm.ByteVector.putUTF8(ByteVector.java:246)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8(SymbolTable.java:774)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8Reference(SymbolTable.java:1007)
+	at org.objectweb.asm.SymbolTable.addConstantString(SymbolTable.java:604)
+	at org.objectweb.asm.SymbolTable.addConstant(SymbolTable.java:474)
+	at org.objectweb.asm.MethodWriter.visitLdcInsn(MethodWriter.java:1276)
+	at org.objectweb.asm.MethodVisitor.visitLdcInsn(MethodVisitor.java:539)
+	at io.quarkus.gizmo.GizmoMethodVisitor.visitLdcInsn(GizmoMethodVisitor.java:140)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:743)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:735)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$InvokeOperation.writeBytecode(BytecodeCreatorImpl.java:1222)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1118)
+	... 19 more
+
+org.junit.jupiter.api.extension.TestInstantiationException: TestInstanceFactory [io.quarkus.test.junit.QuarkusTestExtension] failed to instantiate test class [com.quarkus.demo.MediaControllerTest]: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.deployment.steps.MainClassBuildStep#build threw an exception: java.lang.RuntimeException: java.lang.IllegalArgumentException: UTF8 string too large
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1121)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeInteriorOperations(BytecodeCreatorImpl.java:1036)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeOperations(BytecodeCreatorImpl.java:1030)
+	at io.quarkus.gizmo.MethodCreatorImpl.write(MethodCreatorImpl.java:103)
+	at io.quarkus.gizmo.ClassCreator.writeTo(ClassCreator.java:180)
+	at io.quarkus.gizmo.ClassCreator.close(ClassCreator.java:203)
+	at io.quarkus.deployment.recording.BytecodeRecorderImpl.writeBytecode(BytecodeRecorderImpl.java:462)
+	at io.quarkus.deployment.steps.MainClassBuildStep.build(MainClassBuildStep.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:915)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:279)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2011)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1535)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1426)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
+Caused by: java.lang.IllegalArgumentException: UTF8 string too large
+	at org.objectweb.asm.ByteVector.putUTF8(ByteVector.java:246)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8(SymbolTable.java:774)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8Reference(SymbolTable.java:1007)
+	at org.objectweb.asm.SymbolTable.addConstantString(SymbolTable.java:604)
+	at org.objectweb.asm.SymbolTable.addConstant(SymbolTable.java:474)
+	at org.objectweb.asm.MethodWriter.visitLdcInsn(MethodWriter.java:1276)
+	at org.objectweb.asm.MethodVisitor.visitLdcInsn(MethodVisitor.java:539)
+	at io.quarkus.gizmo.GizmoMethodVisitor.visitLdcInsn(GizmoMethodVisitor.java:140)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:743)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:735)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$InvokeOperation.writeBytecode(BytecodeCreatorImpl.java:1222)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1118)
+	... 19 more
+
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstanceFactory(ClassBasedTestDescriptor.java:300)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:275)
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:77)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.deployment.steps.MainClassBuildStep#build threw an exception: java.lang.RuntimeException: java.lang.IllegalArgumentException: UTF8 string too large
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1121)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeInteriorOperations(BytecodeCreatorImpl.java:1036)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeOperations(BytecodeCreatorImpl.java:1030)
+	at io.quarkus.gizmo.MethodCreatorImpl.write(MethodCreatorImpl.java:103)
+	at io.quarkus.gizmo.ClassCreator.writeTo(ClassCreator.java:180)
+	at io.quarkus.gizmo.ClassCreator.close(ClassCreator.java:203)
+	at io.quarkus.deployment.recording.BytecodeRecorderImpl.writeBytecode(BytecodeRecorderImpl.java:462)
+	at io.quarkus.deployment.steps.MainClassBuildStep.build(MainClassBuildStep.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:915)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:279)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2011)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1535)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1426)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
+Caused by: java.lang.IllegalArgumentException: UTF8 string too large
+	at org.objectweb.asm.ByteVector.putUTF8(ByteVector.java:246)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8(SymbolTable.java:774)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8Reference(SymbolTable.java:1007)
+	at org.objectweb.asm.SymbolTable.addConstantString(SymbolTable.java:604)
+	at org.objectweb.asm.SymbolTable.addConstant(SymbolTable.java:474)
+	at org.objectweb.asm.MethodWriter.visitLdcInsn(MethodWriter.java:1276)
+	at org.objectweb.asm.MethodVisitor.visitLdcInsn(MethodVisitor.java:539)
+	at io.quarkus.gizmo.GizmoMethodVisitor.visitLdcInsn(GizmoMethodVisitor.java:140)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:743)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:735)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$InvokeOperation.writeBytecode(BytecodeCreatorImpl.java:1222)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1118)
+	... 19 more
+
+	at io.quarkus.runner.RuntimeRunner.run(RuntimeRunner.java:181)
+	at io.quarkus.test.junit.QuarkusTestExtension.doJavaStart(QuarkusTestExtension.java:249)
+	at io.quarkus.test.junit.QuarkusTestExtension.createTestInstance(QuarkusTestExtension.java:394)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstanceFactory(ClassBasedTestDescriptor.java:285)
+	... 72 more
+Caused by: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.deployment.steps.MainClassBuildStep#build threw an exception: java.lang.RuntimeException: java.lang.IllegalArgumentException: UTF8 string too large
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1121)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeInteriorOperations(BytecodeCreatorImpl.java:1036)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeOperations(BytecodeCreatorImpl.java:1030)
+	at io.quarkus.gizmo.MethodCreatorImpl.write(MethodCreatorImpl.java:103)
+	at io.quarkus.gizmo.ClassCreator.writeTo(ClassCreator.java:180)
+	at io.quarkus.gizmo.ClassCreator.close(ClassCreator.java:203)
+	at io.quarkus.deployment.recording.BytecodeRecorderImpl.writeBytecode(BytecodeRecorderImpl.java:462)
+	at io.quarkus.deployment.steps.MainClassBuildStep.build(MainClassBuildStep.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:915)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:279)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2011)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1535)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1426)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
+Caused by: java.lang.IllegalArgumentException: UTF8 string too large
+	at org.objectweb.asm.ByteVector.putUTF8(ByteVector.java:246)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8(SymbolTable.java:774)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8Reference(SymbolTable.java:1007)
+	at org.objectweb.asm.SymbolTable.addConstantString(SymbolTable.java:604)
+	at org.objectweb.asm.SymbolTable.addConstant(SymbolTable.java:474)
+	at org.objectweb.asm.MethodWriter.visitLdcInsn(MethodWriter.java:1276)
+	at org.objectweb.asm.MethodVisitor.visitLdcInsn(MethodVisitor.java:539)
+	at io.quarkus.gizmo.GizmoMethodVisitor.visitLdcInsn(GizmoMethodVisitor.java:140)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:743)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:735)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$InvokeOperation.writeBytecode(BytecodeCreatorImpl.java:1222)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1118)
+	... 19 more
+
+	at io.quarkus.builder.Execution.run(Execution.java:108)
+	at io.quarkus.builder.BuildExecutionBuilder.execute(BuildExecutionBuilder.java:79)
+	at io.quarkus.deployment.QuarkusAugmentor.run(QuarkusAugmentor.java:128)
+	at io.quarkus.runner.RuntimeRunner.run(RuntimeRunner.java:114)
+	... 75 more
+Caused by: java.lang.RuntimeException: java.lang.IllegalArgumentException: UTF8 string too large
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1121)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeInteriorOperations(BytecodeCreatorImpl.java:1036)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.writeOperations(BytecodeCreatorImpl.java:1030)
+	at io.quarkus.gizmo.MethodCreatorImpl.write(MethodCreatorImpl.java:103)
+	at io.quarkus.gizmo.ClassCreator.writeTo(ClassCreator.java:180)
+	at io.quarkus.gizmo.ClassCreator.close(ClassCreator.java:203)
+	at io.quarkus.deployment.recording.BytecodeRecorderImpl.writeBytecode(BytecodeRecorderImpl.java:462)
+	at io.quarkus.deployment.steps.MainClassBuildStep.build(MainClassBuildStep.java:224)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.deployment.ExtensionLoader$2.execute(ExtensionLoader.java:915)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:279)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2011)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1535)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1426)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:479)
+Caused by: java.lang.IllegalArgumentException: UTF8 string too large
+	at org.objectweb.asm.ByteVector.putUTF8(ByteVector.java:246)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8(SymbolTable.java:774)
+	at org.objectweb.asm.SymbolTable.addConstantUtf8Reference(SymbolTable.java:1007)
+	at org.objectweb.asm.SymbolTable.addConstantString(SymbolTable.java:604)
+	at org.objectweb.asm.SymbolTable.addConstant(SymbolTable.java:474)
+	at org.objectweb.asm.MethodWriter.visitLdcInsn(MethodWriter.java:1276)
+	at org.objectweb.asm.MethodVisitor.visitLdcInsn(MethodVisitor.java:539)
+	at io.quarkus.gizmo.GizmoMethodVisitor.visitLdcInsn(GizmoMethodVisitor.java:140)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:743)
+	at io.quarkus.gizmo.BytecodeCreatorImpl.loadResultHandle(BytecodeCreatorImpl.java:735)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$InvokeOperation.writeBytecode(BytecodeCreatorImpl.java:1222)
+	at io.quarkus.gizmo.BytecodeCreatorImpl$Operation.doProcess(BytecodeCreatorImpl.java:1118)
+	... 19 more
+
+com.quarkus.demo.MediaControllerTest > uploadFile() FAILED
+    org.junit.jupiter.api.extension.TestInstantiationException
+        Caused by: java.lang.RuntimeException
+            Caused by: io.quarkus.builder.BuildException
+                Caused by: java.lang.RuntimeException
+                    Caused by: java.lang.IllegalArgumentException
+1 test completed, 1 failed
+> Task :demo-module:test FAILED
+FAILURE: Build failed with an exception.
+* What went wrong:
+Execution failed for task ':demo-module:test'.
+> There were failing tests. See the report at: file:///C:/Users/MyPC/IdeaProjects/quarkus-utf8-too-large-exception/demo-module/build/reports/tests/test/index.html
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+* Get more help at https://help.gradle.org
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.0.1/userguide/command_line_interface.html#sec:command_line_warnings
+BUILD FAILED in 4s
+7 actionable tasks: 3 executed, 4 up-to-date
